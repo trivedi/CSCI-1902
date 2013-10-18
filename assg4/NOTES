@@ -1,0 +1,25 @@
+if(obj < obj2) ....
+// obj.opCmp(obj2) < 0
+
+
+// operator overloading in a class
+
+override int opCmp(Object o) {
+
+    Rect r = cast(Rect)o;
+    // r.top --- now works;
+
+}
+
+
+// in a struct
+
+bool opEquals(Rect r) {  // in a class, the signature would be: override bool opEquals(Object r)
+
+    return opCmp(r) == 0;  // now opEquals is computed by opCmp
+                            // if opCmp == 0, return true
+}
+
+
+
+
